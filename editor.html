@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+
+        #drawable_area, #target_screen, #game_viewport, #menu, .overlay, #touchable_area, #download_area, #redraw_popup
+        { position: fixed; }
+
+        @media (orientation: landscape) {
+            #drawable_area
+            { top: 0; left: 0; bottom: 0; }
+            #menu
+            { top: 0; right: 0; bottom: 0; width: 320px; }
+        }
+        @media (orientation: portrait) {
+            #drawable_area
+            { left: 0; top: 0; right: 0; }
+            #menu
+            { left: 0; bottom: 0; right: 0; height: 320px; }
+        }
+
+        #download_area, #redraw_popup
+        { left: 0; bottom: 0; right: 0; top: 0; overflow-x: scroll; }
+
+        body, #drawable_area
+        { background-color: #002b36; }
+        #target_screen
+        { background-color: #586e75; }
+        #game_viewport
+        { background-color: #93a1a1; }
+        #menu, #download_area, #redraw_popup
+        { background-color: #073642; }
+
+        select, label, input, button, textarea
+        { background-color: #002b36; border: 0; }
+        select:hover, label:hover, input:hover, button:hover, textarea:hover
+        { background-color: #073642; }
+
+        *
+        { color: #657b83; }
+        select, label, input, button, textarea
+        { color: #839496; }
+        hr
+        { color: #93a1a1; }
+
+        *
+        { font-size: 14px; }
+        #redraw_popup
+        { font-size: 20px; }
+
+        #menu, #download_area, #redraw_popup
+        { padding: 16px; }
+        button
+        { padding: 8px; }
+
+
+        textarea
+        { width: 360px; }
+        .config_input
+        { width: 40px; }
+
+    </style>
+  </head>
+  <body>
+    <div id="drawable_area"> <div id="target_screen"> </div> <div id="game_viewport"> </div> <div id="overlay_images"> </div> </div>
+    <div id="touchable_area"> </div>
+    <div id="menu">
+        <table id="tabs">
+            <tr>
+                <td> <button id="override_tab"> Override <button id="override_download"> <u> ↓ </u> </button> </button> </td>
+                <td> <button id="overlay_tab"> Overlay <button id="overlay_download"> <u> ↓ </u> </button> </button> </td>
+                <td> <button id="fullscreen"> ◱  </button> <button id="redraw"> ⟳ </button> </td>
+            </tr>
+        </table>
+        <hr/>
+        <div id="override_menu">
+            <table id="screen_config">
+                <tr> <td> Target Screen: </td> </tr>
+                <tr> <td> <select class="config" id="screen_preset"> </select> <select class="config" id="screen_orientation"> </select> </td> </tr>
+                <tr>
+                    <td>
+                        <label for="screen_custom"> Custom Size <input class="config" type="checkbox" id="screen_custom"> : </label>
+                        (
+                        <input class="config config_input" id="screen_size_x">
+                        x
+                        <input class="config config_input" id="screen_size_y">
+                        )
+                    </td>
+                <tr>
+            </table>
+            <table id="viewport_config">
+                <tr> <td> Game Viewport: </td> </tr>
+                <tr> <td> <select class="config" id="viewport_preset"> </select> <select class="config" id="viewport_multiplier"> </select> </td> </tr>
+                <tr>
+                    <td>
+                        <label for="viewport_custom"> Custom Size <input class="config" type="checkbox" id="viewport_custom"> : </label>
+                        (
+                        <input class="config config_input" id="viewport_size_x">
+                        x
+                        <input class="config config_input" id="viewport_size_y">
+                        )
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="overlay_menu">
+            <div id="overlay_options"> Property: <select class="overlay_option" id="overlay_property"> </select> Action: <select class="overlay_option" id="overlay_action"> </select> </div>
+            <hr/>
+            <div id="overlay_list"> </div>
+        </div>
+        <div id="redraw_popup">
+            To properly draw everything when entering and exiting fullscreen and changing screen orientation requires the redraw button to be clicked.
+            <br/> <br/>
+            This has the ⟳  symbol and can be found on the upper-right corner of the menu.
+            <br/> <br/>
+            Click the button below to redraw and continue
+            <br/> <br/>
+            <button id="close_and_redraw"> ⟳ </button>
+        </div>
+        <div id="download_area"> <button id="download_close"> Close </button>  <p id="download_instructions"> </p> <br/> <textarea rows="6" column="64" id="download_config"> </textarea> </div>
+    </div>
+    <script src="./scripts/overlay.js"> </script>
+    <script src="./scripts/options.js"> </script>
+    <script src="./scripts/config.js"> </script>
+    <script src="./scripts/grid.js"> </script>
+    <script src="./scripts/state.js"> </script>
+    <script src="./scripts/download.js"> </script>
+    <script src="./scripts/draw.js"> </script>
+    <script src="./scripts/navigate.js"> </script>
+    <script src="./scripts/touch.js"> </script>
+    <script src="./scripts/events.js"> </script>
+    <script>
+        openOverrideTab();
+        switchOverlayProperty();
+        draw();
+        closeDownload();
+    </script>
+  </body>
+</html>
