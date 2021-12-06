@@ -1,6 +1,6 @@
 # retroarch_input_overlay_editor
 
-Problem statement: When creating an input overlay, I do not want to search for values, do pixel mathematics on values and type values manually. Also I do not want to move or scale overlays in pixel values. I want a less precise grid instead like 32 x 18 on which I can just tap to move and tap to scale
+Problem statement: When creating an input overlay, I do not want to search for values, do pixel mathematics on values and type values manually. Also I do not want to move or scale overlays in pixel values. I want a less precise grid instead, like 32 x 18, on which I can just tap to move and tap to scale
 
 Tech stack: HTML + CSS + JS
 
