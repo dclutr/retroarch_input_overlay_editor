@@ -20,21 +20,21 @@ Click on editor.html to open in a browser ( no-internet required )
     
 2. Overlay menu
   
-  * There are two dropdowns, 'Property' and 'Action' which works as follows
+	* There are two dropdowns, 'Property' and 'Action' which works as follows
   
-	* If the 'Property' dropdown is set to active, the list of checkboxes below shows which overlays are active and which are not.
+	* 'Property' dropdown > 'active' => the list of checkboxes below show which overlays are 'active'
   
-	* if the 'Action' dropdown is set to move, then touching on the screen area will move overlays
+	* 'Action' dropdown > 'move' => touching on the screen area will 'move' overlays with 'selected' property true 
 
 3. Other buttons
 
-	* Download ↓ buttons on the right of each of the Tab buttons show a popup from where the configuration data can be copied
+	* Download ↓ buttons on the right of each of the Tab buttons launch a popup from where the configuration data can be copied from
   
 	* Toggle Fullscreen and Redraw Properly buttons are on the further right denoted by ◱ and ⟳
 
 ## Moving and Scaling
 
-The idea is make an overlay active then select it and then move or scale it
+The idea is to make an overlay active then select it and then move or scale it
 
 Step 1. Property dropdown > Active
 
