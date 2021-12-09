@@ -7,7 +7,7 @@ Option 1: Github pages: https://dclutr.github.io/retroarch_input_overlay_editor/
 
 Option 2. Local: Download/Clone the repository and click on index.html
 
-**For mobile devices, some additional apps may be required. It is probably better to just use Github pages. For my android device, I had to use 3 apps, Material Files *(me.zhangai.android.files)*, Open in browser *(ru.gelin.android.browser.open)*, Styx Browser *(com.jamal2367.styx)*. There is also one another app needed that is one of the F-Droid stores I downloaded these apps from. I used Foxy Droid. Aurora Droid is probably the best option due to the repositories already configured in it**
+**For mobile devices, some additional apps may be required. It is probably better to just use Github pages. For my android device, I had to use 3 apps, Material Files *(me.zhangai.android.files)*, Open in browser *(ru.gelin.android.browser.open)*, Styx Browser *(com.jamal2367.styx)*. There is probably one another app needed that is one of the F-Droid stores to downloaded these apps. I used Foxy Droid. Aurora Droid is probably the best option due to the repositories already configured in it**
 
 ## Editor Menus
 
