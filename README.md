@@ -1,44 +1,29 @@
 # retroarch_input_overlay_editor
-Create retroarch input overlays in browser offline
+Create retroarch input overlays in browser
 
-https://dclutr.github.io/retroarch_input_overlay_editor/
+## Running
 
+Option 1: Github pages: https://dclutr.github.io/retroarch_input_overlay_editor/
 
-Problem statement: When creating an input overlay, I do not want to search for values, do pixel mathematics on values and type values manually. Also I do not want to move or scale overlays in pixel values. I want a less precise grid instead, like 32 x 18, on which I can just tap to move and tap to scale
+Option 2. Local: Download/Clone the repository and click on index.html
 
-Tech stack: HTML + CSS + JS
+**For mobile devices, some additional apps may be required. It is probably better to just use Github pages. For my android device, I had to use 3 apps, Material Files *(me.zhangai.android.files)*, Open in browser *(ru.gelin.android.browser.open)*, Styx Browser *(com.jamal2367.styx)*. There is also one another app needed that is one of the F-Droid stores I downloaded these apps from. I used Foxy Droid. Aurora Droid is probably the best option due to the repositories already configured in it**
 
-## Launching the editor
+## Editor Menus
 
-Click on editor.html to open in a browser ( no-internet required )
-
-*While, I wanted this to be usable on mobile phones, the compatibility might be iffy. Last section talks about the way I got it to work on my Android phone*
- 
-## Menus
-
-1. Override menu
-
-	* Resolutions can be set via presets selected from dropdowns
+1. Override menu is used to set the resolutions, either by selecting presets from dropdowns or checking the Custom Size checkbox and manually entering values.
     
-	* Resolutions can also be entered manually after checking the Custom Size checkbox
-    
-2. Overlay menu
+2. Overlay menu has two dropdowns, 'Property' and 'Action'.
   
-	* There are two dropdowns, 'Property' and 'Action' which works as follows
+	* 'Property' dropdown > 'active' generates a list of checkboxes showng which overlays are 'active'
   
-	* 'Property' dropdown > 'active' => the list of checkboxes below show which overlays are 'active'
-  
-	* 'Action' dropdown > 'move' => touching on the screen area will 'move' overlays with 'selected' property true 
+	* 'Action' dropdown > 'move' sets the action performed on touching on the screen to 'move' 
 
-3. Other buttons
+3. Other buttons: Download ↓,Toggle Fullscreen ◱ and Redraw Properly ⟳
 
-	* Download ↓ buttons on the right of each of the Tab buttons launch a popup from where the configuration data can be copied from
-  
-	* Toggle Fullscreen and Redraw Properly buttons are on the further right denoted by ◱ and ⟳
+## Example: Moving
 
-## Moving and Scaling
-
-The idea is to make an overlay active then select it and then move or scale it
+Make overlays active > Select them > Move them
 
 Step 1. Property dropdown > Active
 
@@ -50,23 +35,17 @@ Step 4. Click on overlays in the list to select them
  
 Step 5. Action dropdown > Move
 
-Step 6. Click on the screen area to move
+Step 6. Click on the screen area to move the selected
 
 Hopefully this is not too convoluted :P
   
 ## Other less important properties other than 'active' and 'selected' that can be changed
 
-* clickable - Overlays that are just decoration should have 'clickable' false
+* clickable - Overlays that are just decoration should have 'clickable' false, for example: analog stick backgrounds are not clickable by default
 
-	example: analog stick backgrounds are not clickable by default
+* movable - Overlays that should follow ones touches should have 'movable' true, for example: analog sticks are movable by default
 
-* movable - Overlays that should follow ones touches should have 'movable' true
-
-	example: analog sticks are movable by default
-
-* radial - overlays that have round hitboxes as opposed to rectangular hitboxes should have 'radial' true
-
-	example: a, b, x, y and analog sticks are radial by default
+* radial - overlays that have round hitboxes as opposed to rectangular hitboxes should have 'radial' true, for example: a, b, x, y and analog sticks are radial by default
   
 *Note: anything that is movable will be exported as radial to avoid issues*
 
@@ -83,13 +62,13 @@ A recent obsession with the 'Solarized' color scheme
 	* Open in browser *(ru.gelin.android.browser.open)*
   
 	* Styx Browser *(com.jamal2367.styx)*
-
-*They should be available on Aurora Droid store, might be on F-Droid store and Foxy Droid store too*
   
 2. Gave Material Files and Styx Browser access to Storage in Settings 
 
 3. Found editor.html using the file manager 'Material Files', opened with 'Open in Browser' and selected 'Styx Browser'
 
-THE END
+Probably just use the Github Pages link
 
-There is got to be a better way but I ain't finding it
+## What would I want to change in the editor
+
+Well I recently used the overlay editor inbuilt in PPSSPP, that sure was fun. If I spend any more time on this I probably would want to make something that works straight in Retroarch, to make the effort worth it. How? I don't know. For now this is good enough for me. A project for another day maybe
